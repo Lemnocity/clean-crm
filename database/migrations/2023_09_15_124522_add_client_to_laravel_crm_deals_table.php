@@ -50,9 +50,13 @@ class AddClientToLaravelCrmDealsTable extends Migration
         }); 
                 
        
-        Schema::table(config('laravel-crm.db_table_prefix').'users', function (Blueprint $table) {
+        /*Schema::table(config('laravel-crm.db_table_prefix').'users', function (Blueprint $table) {
             $table->string('url')->nullable();
-        }); 
+        });*/
+
+        Schema::table('users', function (Blueprint $table) {
+            $table->string('url')->nullable();
+        });
         
         Schema::table('crm_teams', function (Blueprint $table) {
             $table->string('url')->nullable();
